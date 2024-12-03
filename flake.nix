@@ -15,13 +15,7 @@
           buildInputs = with pkgs; [
             nodejs_20
             yarn
-            docker
-            docker-compose
-            direnv
-            gh
             deno
-            supabase-cli
-            nodePackages.vercel
           ];
 
           shellHook = ''
