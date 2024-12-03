@@ -20,6 +20,7 @@
             pkgs.docker-compose
             pkgs.direnv
             pkgs.gh
+            pkgs.deno
             pkgs.supabase-cli
             pkgs.nodePackages.vercel
           ];
