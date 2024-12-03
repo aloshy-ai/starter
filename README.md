@@ -72,9 +72,9 @@ If the environment doesn't load automatically:
 direnv reload
 ```
 
-Or force a complete rebuild of the environment:
+Or if didn't work, you can manually load the environment:
 ```bash
-direnv reload --force
+nix develop
 ```
 
 ## Contributing
