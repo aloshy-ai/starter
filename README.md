@@ -5,64 +5,79 @@
 Next.js starter template with Supabase integration and one-click Vercel deployment.
 
 ## Features
-
 - Next.js 14+ with App Router
 - Supabase Authentication
 - TypeScript
-- Nix Development Environment with devenv
+- Nix Development Environment
 - One-click Vercel Deployment
 
 ## Prerequisites
 
-### Install `nix`
-
+### 1. Install Nix
 ```bash
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
-### Enable `flakes`
-
+### 2. Enable Flakes and Nix-Direnv
+Add to your `~/.config/nix/nix.conf`:
 ```bash
-echo "experimental-features = nix-command flakes" | mkdir -p ~/.config/nix && tee ~/.config/nix/nix.conf
+experimental-features = nix-command flakes
 ```
 
-### Install `devenv`
-
+### 3. Setup Direnv
+Install direnv and nix-direnv:
 ```bash
-nix-env -iA devenv -f https://github.com/NixOS/nixpkgs/tarball/nixpkgs-unstable
+nix-env -i direnv nix-direnv
 ```
 
-### Install `direnv`
-
+Add to your shell RC file (~/.bashrc, ~/.zshrc, etc):
 ```bash
-nix-env -i direnv
+eval "$(direnv hook zsh)"  # or bash
+source $HOME/.nix-profile/share/nix-direnv/direnvrc
 ```
 
-Then add to your `~/.zshrc` (or `~/.bashrc`):
+### 4. Install Docker Desktop
+Download and install from [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
-```bash
-eval "$(direnv hook zsh)"
-```
+### 5. IDE Setup (Optional)
+For VS Code:
+- Install [Direnv extension](https://marketplace.visualstudio.com/items?itemName=cab404.vscode-direnv)
+- Reload VS Code after installation
 
-> ⚠️ Use `bash` instead of `zsh` if using `bash`.
+For other IDEs:
+1. Open a terminal inside the IDE
+2. Run `direnv allow`
+3. Restart the IDE to ensure environment variables are loaded
 
 ## Development
 
-### Clone repository
-
+### 1. Clone Repository
 ```bash
 git clone https://github.com/aloshy-ai/starter.git
 cd starter
 ```
 
-### Allow `direnv`
-
+### 2. Setup Environment
 ```bash
 direnv allow
 ```
 
-## Contributing
+The environment will automatically load when:
+- Entering the directory in terminal
+- Opening VS Code with the Direnv extension
+- Opening terminals inside supported IDEs with direnv integration
 
+If the environment doesn't load automatically:
+```bash
+direnv reload
+```
+
+Or force a complete rebuild of the environment:
+```bash
+direnv reload --force
+```
+
+## Contributing
 We follow the [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow):
 
 1. Fork the repository
@@ -72,9 +87,7 @@ We follow the [GitHub Flow](https://docs.github.com/en/get-started/quickstart/gi
 5. Open Pull Request
 
 ### Commit Convention
-
 We use [Conventional Commits](https://www.conventionalcommits.org/):
-
 - `feat:` New features
 - `fix:` Bug fixes
 - `docs:` Documentation changes
@@ -84,5 +97,4 @@ We use [Conventional Commits](https://www.conventionalcommits.org/):
 - `chore:` Maintenance tasks
 
 ## License
-
 MIT License - see [LICENSE](LICENSE) for details.
