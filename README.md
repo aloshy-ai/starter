@@ -7,18 +7,34 @@ Next.js starter template with Supabase integration and one-click Vercel deployme
 - Next.js 14+ with App Router
 - Supabase Authentication
 - TypeScript
-- Nix Development Environment
+- Nix Development Environment with devenv
 - One-click Vercel Deployment
 
 ## Prerequisites
-### Install Nix
+
+### 1. Install Nix
 ```bash
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
-### Enable Flakes
+### 2. Enable Flakes
 ```bash
 echo "experimental-features = nix-command flakes" | mkdir -p ~/.config/nix && tee ~/.config/nix/nix.conf
+```
+
+### 3. Install devenv
+```bash
+nix-env -iA devenv -f https://github.com/NixOS/nixpkgs/tarball/nixpkgs-unstable
+```
+
+### 4. Install direnv
+```bash
+nix-env -i direnv
+```
+
+Then add to your `~/.zshrc` (or `~/.bashrc`):
+```bash
+eval "$(direnv hook zsh)"  # or use "bash" instead of "zsh" if using bash
 ```
 
 ## Development
@@ -28,20 +44,16 @@ git clone https://github.com/aloshy-ai/starter.git
 cd starter
 ```
 
-2. Enter development shell
+2. Allow direnv
 ```bash
-nix develop
+direnv allow
 ```
 
-3. Install dependencies
-```bash
-yarn install
-```
-
-4. Start development server
-```bash
-yarn dev
-```
+## Available Commands
+- `devenv up` - Start all development processes
+- `devenv shell` - Enter development environment
+- `devenv info` - Show environment information
+- `devenv update` - Update development environment
 
 ## Contributing
 We follow the [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow):
