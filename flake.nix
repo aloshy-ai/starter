@@ -16,6 +16,7 @@
             nodejs_20
             yarn
             deno
+            gh
           ];
 
           shellHook = ''
