@@ -1,7 +1,5 @@
 # Next.js + Supabase Starter
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Faloshy-ai%2Fstarter&project-name=untitled-starter&repository-name=untitled-starter&demo-title=untitled-starter&demo-description=This%20starter%20configures%20a%20project%20to%20quickly%20deploy%20with%20Vercel&demo-url=https%3A%2F%2Fstarter.aloshy.ai&external-id=https%3A%2F%2Fgithub.com%2Faloshy-ai%2Fstarter&demo-image=https%3A%2F%2Fstarter.aloshy.ai%2Fopengraph-image.png)
-
 Next.js starter template with Supabase integration and one-click Vercel deployment.
 
 ## Features
@@ -47,26 +45,19 @@ source $HOME/.nix-profile/share/nix-direnv/direnvrc
 
 Download and install from [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
-### 5. IDE Setup (Optional)
-
-For VS Code:
-
-- Install [Direnv extension](https://marketplace.visualstudio.com/items?itemName=cab404.vscode-direnv)
-- Reload VS Code after installation
-
-For other IDEs:
-
-1. Open a terminal inside the IDE
-2. Run `direnv allow`
-3. Restart the IDE to ensure environment variables are loaded
-
 ## Development
+
+### 1. Deploy with Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Faloshy-ai%2Fquick-starter-nextjs-supabase.git&project-name=nextjs-supabase-quick-starter&repository-name=nextjs-supabase-quick-starter&demo-title=nextjs-supabase-quick-starter&demo-description=This%20starter%20configures%20a%20project%20to%20quickly%20deploy%20with%20Vercel&demo-url=https%3A%2F%2Fstarter.aloshy.ai&external-id=https%3A%2F%2Fgithub.com%2Faloshy-ai%2Fquick-starter-nextjs-supabase.git&demo-image=https%3A%2F%2Fstarter.aloshy.ai%2Fopengraph-image.png&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6)
 
 ### 1. Clone Repository
 
+Then clone the repository just created, and navigate to the project directory:
+
 ```bash
-git clone https://github.com/aloshy-ai/starter.git
-cd starter
+git clone <repository-url>
+cd <repository-name>
 ```
 
 ### 2. Setup Environment
