@@ -1,5 +1,6 @@
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 import { getImageDimensions, verifyOGImage } from '@/tests/utils/image'
+import { SITE_NAME } from '@/lib/constants'
 
 test.describe('OpenGraph Images', () => {
   test('should generate main OG image', async ({ page }) => {
@@ -16,7 +17,7 @@ test.describe('OpenGraph Images', () => {
   })
 
   test('should generate blog OG image', async ({ page }) => {
-    const { contentType, ok } = await verifyOGImage(page, '/blog/opengraph-image')
+    const { contentType, ok } = await verifyOGImage(page, '/opengraph-image')
 
     // Verify response
     expect(ok).toBeTruthy()
@@ -35,6 +36,6 @@ test.describe('OpenGraph Images', () => {
 
     // Verify alt text
     const ogAlt = await page.getAttribute('meta[property="og:image:alt"]', 'content')
-    expect(ogAlt).toBe('About Acme')
+    expect(ogAlt).toBe(SITE_NAME)
   })
 })

@@ -1,10 +1,8 @@
 import { ImageResponse } from 'next/og'
 
-// Route segment config
 export const runtime = 'edge'
 
-// Image metadata
-export const alt = 'About Acme'
+export const alt = 'Create Next App'
 export const size = {
   width: 1200,
   height: 630,
@@ -12,11 +10,9 @@ export const size = {
 
 export const contentType = 'image/png'
 
-// Image generation
 export default async function Image() {
   return new ImageResponse(
     (
-      // ImageResponse JSX element
       <div
         style={{
           fontSize: 128,
@@ -26,20 +22,12 @@ export default async function Image() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          flexDirection: 'column',
-          padding: '40px',
         }}
       >
-        <div style={{ fontSize: '64px', fontWeight: 'bold', marginBottom: '20px' }}>
-          Your App Name
-        </div>
-        <div style={{ fontSize: '32px', color: '#666' }}>Your tagline here</div>
+        Blog Posts
       </div>
     ),
-    // ImageResponse options
     {
-      // For convenience, we can re-use the exported opengraph-image
-      // size config to also set the ImageResponse's width and height.
       ...size,
     }
   )
