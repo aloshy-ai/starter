@@ -5,14 +5,9 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/auth',
-        permanent: true,
-      },
-      {
         // For all sign-in and sign-up routes
         source: '/sign-(in|up)',
-        destination: '/auth',
+        destination: '/',
         permanent: true,
       },
     ]

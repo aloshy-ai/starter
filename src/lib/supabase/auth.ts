@@ -21,7 +21,9 @@ export async function signInWithGitHub() {
 export async function signOut() {
   const supabase = createBrowserClient()
 
-  const { error } = await supabase.auth.signOut()
+  const { error } = await supabase.auth.signOut({
+    scope: 'global',
+  })
 
   if (error) {
     console.error('Error:', error.message)

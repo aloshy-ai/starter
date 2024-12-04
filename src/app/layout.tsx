@@ -1,6 +1,5 @@
 import '@/app/globals.css'
 import { metadata } from '@/app/metadata'
-import { TextHoverEffect } from '@/components/ui/text-hover-effect'
 
 export { metadata }
 
@@ -11,10 +10,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
-      <div className="fixed inset-0 -z-10 h-screen w-screen bg-black p-16">
-        <TextHoverEffect text="aloshy.ai" />
-      </div>
+      <body className="m-0 flex h-screen w-screen items-center justify-center p-16 antialiased">
+        {children}
+      </body>
     </html>
   )
 }
