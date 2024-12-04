@@ -13,7 +13,7 @@
     "lint:fix": "next lint --fix",
     "format:ts": "prettier --write .",
     "test": "playwright test",
-    "format:sql": "for file in ./supabase/**/*.sql; do sql-formatter \"$file\" -o \"$file\"; done",
+    "format:sql": "for file in supabase/**/*.sql; do sql-formatter -l postgresql \"$file\" -o \"$file\"; done",
     "format": "yarn format:ts && yarn format:sql",
     "db:start": "supabase start",
     "db:stop": "supabase stop",

@@ -5,14 +5,5 @@
   "keywordCase": "lower",
   "dataTypeCase": "lower",
   "functionCase": "lower",
-  "identifierCase": "lower",
-  "linesBetweenQueries": 2,
-  "maxColumnLength": 100,
-  "params": null,
-  "paramTypes": {
-    "named": [],
-    "positional": []
-  },
-  "newlineBeforeSemicolon": false,
-  "logicalOperatorNewline": "before"
+  "identifierCase": "lower"
 }
