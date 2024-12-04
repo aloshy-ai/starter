@@ -194,7 +194,7 @@ verify_enabled = true
 enabled = true
 client_id = "env(SUPABASE_AUTH_EXTERNAL_GITHUB_ID)"
 secret = "env(SUPABASE_AUTH_EXTERNAL_GITHUB_SECRET)"
-# Overrides the default auth redirectUrl.
+# Overrides the default auth redirectUrl. (This is the URL that the auth provider will redirect to)
 redirect_uri = "http://localhost:54321/auth/v1/callback"
 # Overrides the default auth provider URL. Used to support self-hosted gitlab, single-tenant Azure,
 # or any other third-party OIDC providers.
