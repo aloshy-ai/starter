@@ -15,7 +15,6 @@
           buildInputs = with pkgs; [
             nodejs_20
             yarn
-            deno
             gh
           ];
 

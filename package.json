@@ -19,7 +19,7 @@
     "db:stop": "supabase stop",
     "db:reset": "supabase db reset",
     "db:push": "supabase db push",
-    "db:types": "supabase gen types typescript --local > src/types/database.ts",
+    "db:types": "supabase gen types typescript --local > src/lib/supabase/types.ts",
     "db:migrate:new": "read -p \"Migration name: \" name && supabase migration new $name",
     "db:status": "supabase status",
     "db:studio": "open http://127.0.0.1:54323",
@@ -32,10 +32,21 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.1.0",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.46.2",
     "@vercel/og": "^0.6.4",
+    "button": "^1.1.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.464.0",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "shadcn": "^2.1.6",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "ui": "^0.2.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.42.0",
