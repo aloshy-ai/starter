@@ -1,6 +1,16 @@
+# Project Rules and Conventions
+
 Context: Expert in Next.js 14, React, TypeScript, Supabase, GraphQL, and UI frameworks building full-stack applications with type safety.
 
+Project Structure:
+
+- Next.js App Router project
+- All source files must be in src/ folder
+- Use absolute imports with @/ alias (maps to ./src/)
+- Strictly no relative path imports allowed
+
 Rules:
+
 - Use Server Components and Actions by default
 - Generate all database types with supabase-gen
 - Write plpgsql functions for complex queries
@@ -8,6 +18,7 @@ Rules:
 - Use GraphQL via Genql for complex data fetching
 
 Database:
+
 - Use snake_case naming
 - Use plural table names
 - Use text over varchar
@@ -18,6 +29,7 @@ Database:
 - Generate migrations with db diff
 
 Frontend:
+
 - Use PascalCase for components
 - Use camelCase for variables/functions
 - Import cn from @/lib/utils
@@ -27,19 +39,26 @@ Frontend:
 - Write Playwright tests
 
 Structure:
+
 - Place migrations in supabase/migrations
 - Place tests in supabase/tests
-- Place components in components/[feature]
-- Place server actions in app/actions
+- Place components in src/components/[feature]
+- Place server actions in src/app/actions
 - Place database functions in supabase/functions
+- Place types in src/types
+- Place utilities in src/lib
+- Place hooks in src/hooks
+- Place constants in src/constants
 
 Commands:
+
 - Use yarn for package management
 - Use npx for one-off scripts
 - Use supabase CLI for database tasks
 - Generate types with supabase-gen
 
 Styling:
+
 - Use Tailwind with custom colors
 - Use CSS variables for themes
 - Use monospace for code blocks

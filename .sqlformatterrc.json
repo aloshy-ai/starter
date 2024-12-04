@@ -5,5 +5,15 @@
   "keywordCase": "upper",
   "dataTypeCase": "upper",
   "functionCase": "lower",
-  "identifierCase": "lower"
+  "identifierCase": "lower",
+  "linesBetweenQueries": 1,
+  "maxColumnLength": 100,
+  "params": null,
+  "paramTypes": {
+    "named": [],
+    "positional": []
+  },
+  "newlineBeforeSemicolon": false,
+  "logicalOperatorNewline": "before",
+  "indentStyle": "standard"
 }
