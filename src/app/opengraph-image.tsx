@@ -1,8 +1,9 @@
 import { ImageResponse } from 'next/og'
+import { SITE_SHORT_NAME } from '@/lib/constants'
 
 export const runtime = 'edge'
 
-export const alt = 'Create Next App'
+export const alt = SITE_SHORT_NAME
 export const size = {
   width: 1200,
   height: 630,
