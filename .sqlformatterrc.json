@@ -2,11 +2,11 @@
   "language": "postgresql",
   "tabWidth": 2,
   "useTabs": false,
-  "keywordCase": "upper",
-  "dataTypeCase": "upper",
+  "keywordCase": "lower",
+  "dataTypeCase": "lower",
   "functionCase": "lower",
   "identifierCase": "lower",
-  "linesBetweenQueries": 1,
+  "linesBetweenQueries": 2,
   "maxColumnLength": 100,
   "params": null,
   "paramTypes": {
@@ -14,6 +14,5 @@
     "positional": []
   },
   "newlineBeforeSemicolon": false,
-  "logicalOperatorNewline": "before",
-  "indentStyle": "standard"
+  "logicalOperatorNewline": "before"
 }
