@@ -1,3 +1,14 @@
+-- a new table called profiles that references the users table
+create table public.profiles (
+  id uuid not null references auth.users on delete cascade,
+  first_name text,
+  last_name text,
+
+  primary key (id)
+);
+
+alter table public.profiles enable row level security;
+
 -- inserts a row into public.profiles
 create function public.handle_new_user() returns trigger language plpgsql security definer
 set
