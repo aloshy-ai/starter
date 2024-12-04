@@ -22,7 +22,7 @@
     "db:types": "supabase gen types typescript --local > src/lib/supabase/types.ts",
     "db:migrate:new": "read -p \"Migration name: \" name && supabase migration new $name",
     "db:status": "supabase status",
-    "db:studio": "open http://127.0.0.1:54323",
+    "db:studio": "open http://localhost:54323",
     "db:lint": "plpgsql_check",
     "test:e2e": "playwright test",
     "test:unit": "jest",

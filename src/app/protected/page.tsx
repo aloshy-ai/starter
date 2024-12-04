@@ -1,5 +1,9 @@
-import SignOutButton from '@/components/auth/SignOutButton'
+import { TextHoverEffect } from '@/components/ui/text-hover-effect'
 
 export default function ProtectedPage() {
-  return <SignOutButton />
+  return (
+    <div className="flex h-[40rem] items-center justify-center">
+      <TextHoverEffect text="ACET" />
+    </div>
+  )
 }
