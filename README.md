@@ -1,6 +1,6 @@
 # Next.js + Supabase Starter
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Faloshy-ai%2Fstarter&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Faloshy-ai%2Fstarter&project-name=untitled-starter&repository-name=untitled-starter&demo-title=untitled-starter&demo-description=This%20starter%20configures%20a%20project%20to%20quickly%20deploy%20with%20Vercel&demo-url=https%3A%2F%2Fstarter.aloshy.ai&external-id=https%3A%2F%2Fgithub.com%2Faloshy-ai%2Fstarter&demo-image=https%3A%2F%2Fstarter.aloshy.ai%2Fopengraph-image.png)
 
 Next.js starter template with Supabase integration and one-click Vercel deployment.
 

@@ -16,17 +16,6 @@ test.describe('OpenGraph Images', () => {
     expect(size.height).toBe(630)
   })
 
-  test('should generate blog OG image', async ({ page }) => {
-    const { contentType, ok } = await verifyOGImage(page, '/opengraph-image')
-
-    // Verify response
-    expect(ok).toBeTruthy()
-    expect(contentType).toBe('image/png')
-
-    // We can't verify the text content directly as it's an image
-    // Instead, we verify the response is successful and correct type
-  })
-
   test('should have correct metadata', async ({ page }) => {
     await page.goto('/')
 

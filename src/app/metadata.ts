@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants'
+import { SITE_DESCRIPTION, SITE_NAME } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: SITE_NAME,
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: '/opengraph-image',
+        url: '/og-image',
         width: 1200,
         height: 630,
         alt: SITE_NAME,
