@@ -51,6 +51,8 @@ Download and install from [Docker Desktop](https://www.docker.com/products/docke
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Faloshy-ai%2Fquick-starter-nextjs-supabase.git&project-name=nextjs-supabase-quick-starter&repository-name=nextjs-supabase-quick-starter&demo-title=nextjs-supabase-quick-starter&demo-description=This%20starter%20configures%20a%20project%20to%20quickly%20deploy%20with%20Vercel&demo-url=https%3A%2F%2Fstarter.aloshy.ai&external-id=https%3A%2F%2Fgithub.com%2Faloshy-ai%2Fquick-starter-nextjs-supabase.git&demo-image=https%3A%2F%2Fstarter.aloshy.ai%2Fopengraph-image.png&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6)
 
+_Note the Password of the new Database created for future!_
+
 ### 1. Clone Repository
 
 Then clone the repository just created, and navigate to the project directory:
@@ -83,6 +85,38 @@ Or if didn't work, you can manually load the environment:
 ```bash
 nix develop
 ```
+
+### 3. Install Dependencies
+
+```bash
+yarn install
+```
+
+### 4. Link Vercel, Supabase and GitHub CLI
+
+#### a. Vercel
+
+```bash
+vercel link
+```
+
+#### b. Supabase
+
+```bash
+supabase login
+supabase link
+```
+
+## Misc. Commands
+
+Pull the environment variables from Vercel:
+
+```bash
+vercel env pull .env.development --environment development
+vercel env pull .env.production --environment production
+```
+
+_Prodcution environment variable shall not display `Sensitive` values_
 
 ## Contributing
 
