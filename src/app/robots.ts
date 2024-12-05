@@ -1,22 +1,13 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
+import { PROTECTED_ROUTE, SITE_DOMAIN } from '@/lib/constants'
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-      },
-      {
-        userAgent: 'Googlebot',
-        disallow: ['/private/', '/admin/'],
-      },
-      {
-        userAgent: 'AnotherBot',
-        allow: '/path',
-        disallow: '/another-path',
-      },
-    ],
-    sitemap: 'https://yourdomain.com/sitemap.xml',
+    rules: {
+      userAgent: '*',
+      allow: '/',
+      disallow: `${PROTECTED_ROUTE}/`,
+    },
+    sitemap: `https://${SITE_DOMAIN}/sitemap.xml`,
   }
 }

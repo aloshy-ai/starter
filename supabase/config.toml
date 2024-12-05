@@ -195,7 +195,7 @@ enabled = true
 client_id = "env(OAUTH_GITHUB_CLIENT_ID)"
 secret = "env(OAUTH_GITHUB_CLIENT_SECRET)"
 # Overrides the default auth redirectUrl. (This is the URL that the auth provider will redirect to)
-redirect_uri = "http://localhost:3000/auth/callback"
+redirect_uri = "http://127.0.0.1:3000/auth/callback"
 # Overrides the default auth provider URL. Used to support self-hosted gitlab, single-tenant Azure,
 # or any other third-party OIDC providers.
 url = ""

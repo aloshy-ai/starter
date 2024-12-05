@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test'
-import { getImageDimensions, verifyOGImage } from '@/tests/utils/image'
+import { getImageDimensions, verifyOGImage } from '@test/utils/image'
 import { SITE_SHORT_NAME } from '@/lib/constants'
 
 test.describe('OpenGraph Images', () => {
