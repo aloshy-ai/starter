@@ -124,9 +124,8 @@ cp .env.example .env.local
 ### 6. Setup Github Oauth Clients
 
 - Go to `https://github.com/settings/developers and create 2 new OAuth Apps in your GitHub account - one for development and one for production.
-- Update the `.env.local` file with the client ID and secret for development environment. 
+- Update the `.env.local` file with the client ID and secret for development environment.
 - Go to https://supabase.com/dashboard/project/<PROJECT_ID>/auth/providers, and add the GitHub OAuth client ID and secret for production environment.
-
 
 ## Misc. Commands
 
