@@ -12,14 +12,13 @@ export async function Header() {
   return (
     <header>
       {session ? (
-        <div className="flex gap-2">
+        <div>
           <span>Hi {session.user.user_metadata['full_name']}</span>
           <SignOutButton />
         </div>
       ) : (
         <SignInWithGithubButton />
       )}
-      <hr />
     </header>
   )
 }

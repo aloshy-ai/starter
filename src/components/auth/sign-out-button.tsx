@@ -2,9 +2,5 @@ import { Button } from '@/components/ui/button'
 import { signOutAction } from '@/lib/supabase/auth'
 
 export function SignOutButton() {
-  return (
-    <Button size="lg" onClick={signOutAction} className="w-full font-bold uppercase">
-      Sign Out
-    </Button>
-  )
+  return <Button onClick={signOutAction}>Sign Out</Button>
 }
