@@ -1,5 +1,3 @@
-import GitHubSignInButton from '@/components/auth/GitHubSignInButton'
-
-export default function Home() {
-  return <GitHubSignInButton />
+export default async function HomePage() {
+  return <h1>Landing Page</h1>
 }

@@ -41,10 +41,12 @@ export const updateSession = async (request: NextRequest): Promise<NextResponse>
   const { error } = await auth.getUser()
 
   if (error) {
-    if (error.code === 'session_not_found' || error.name === 'AuthSessionMissingError') {
-      response = NextResponse.redirect(new URL('/', request.url))
-    } else if (error.code === 'user_not_found') {
-      response = NextResponse.redirect(new URL('/', request.url))
+    if (
+      error.code === 'session_not_found' ||
+      error.name === 'AuthSessionMissingError' ||
+      error.code === 'user_not_found'
+    ) {
+      response = NextResponse.redirect(new URL('/auth/sign-in', request.url))
     } else {
       console.error(`[ERROR] ${error.code} | ${error.status} | ${error.name} | ${error.message}`)
       response = NextResponse.redirect(new URL(`/error?message=${error.message}`, request.url))

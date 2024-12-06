@@ -21,7 +21,7 @@ test.describe('Robots.txt', () => {
       expect(lines).toContain('Allow: /')
 
       // Check protected paths
-      expect(lines).toContain('Disallow: /protected/')
+      expect(lines).toContain('Disallow: /user/')
 
       // Check sitemap
       expect(lines).toContain(`Sitemap: https://${SITE_DOMAIN}/sitemap.xml`)
