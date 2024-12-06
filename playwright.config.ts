@@ -1,4 +1,9 @@
+// playwright.config.ts
+
 import { PlaywrightTestConfig } from '@playwright/test'
+import dotenv from 'dotenv'
+
+dotenv.config({ path: '.env.local' })
 
 const config: PlaywrightTestConfig = {
   testDir: './test',
@@ -7,13 +12,19 @@ const config: PlaywrightTestConfig = {
   },
   webServer: {
     command: 'yarn dev',
-    port: 3000,
+    url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
+    env: Object.entries(process.env).reduce(
+      (acc, [key, value]) => {
+        if (value !== undefined) {
+          acc[key] = value
+        }
+        return acc
+      },
+      {} as Record<string, string>
+    ),
   },
-  timeout: 60000,
-  expect: {
-    timeout: 10000,
-  },
+  workers: 1,
 }
 
 export default config
