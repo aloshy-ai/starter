@@ -1,11 +1,17 @@
+// src/lib/supabase/middleware.ts
+
 import { createServerClient } from '@supabase/ssr'
 import { type NextRequest, NextResponse } from 'next/server'
 
 /**
- * Updates the session based on the incoming request.
- * If session is expired, it will refresh it by trying to fetch the user.
- * If session is invalid, it will redirect to the sign-in page.
+ * Handles updating a user session for incoming requests, ensuring authentication is managed correctly.
+ * This function uses Supabase to verify the current session based on cookies present in the request.
+ * If the session is missing or expired, it redirects the user to the sign-in page or an error page
+ * depending on the nature of the error encountered.
  *
+ * @param {NextRequest} request - The incoming request object, which includes headers and cookies.
+ * @returns {Promise<NextResponse>} A promise that resolves to a NextResponse object, which might be
+ *         a normal server response, a redirect to a sign-in page, or a redirect to an error page.
  */
 export const updateSession = async (request: NextRequest): Promise<NextResponse> => {
   // Create an unmodified response

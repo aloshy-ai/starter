@@ -1,3 +1,5 @@
+// src/components/auth/sign-out-button.tsx
+
 'use client'
 
 import React, { useEffect, useState } from 'react'
@@ -10,7 +12,14 @@ import { cn } from '@/lib/utils'
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
 import { Avatar, AvatarImage } from '@/components/ui/avatar'
 
-export function SignOutButton({ className }: { className?: string }) {
+/**
+ * A button component for signing out a user.
+ *
+ * @param {Object} props - The props object.
+ * @param {string} [props.className] - An optional class name to apply custom styles to the button.
+ * @return {React.JSX.Element} Returns a React JSX element that renders a sign-out button if a user is authenticated.
+ */
+export function SignOutButton({ className }: { className?: string }): React.JSX.Element {
   const supabase = createBrowserClient()
   const [user, setUser] = useState<User | null>(null)
   const [error, setError] = useState<Error | null>(null)
