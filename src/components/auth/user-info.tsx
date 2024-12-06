@@ -9,10 +9,5 @@ export async function UserInfo() {
 
   if (error) throw error
 
-  return (
-    <div>
-      <h1>User Info</h1>
-      {user && <pre>{JSON.stringify(user, null, 2)}</pre>}
-    </div>
-  )
+  return <div>{user && <h1>Hi {user.user_metadata['full_name']}</h1>}</div>
 }
