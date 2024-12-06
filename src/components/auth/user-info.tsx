@@ -7,7 +7,13 @@ export async function UserInfo() {
     error,
   } = await supabase.auth.getUser()
 
-  if (error) throw error
+  if (error) {
+    return <div>Error: {error.message}</div>
+  }
 
-  return <div>{user && <h1>Hi {user.user_metadata['full_name']}</h1>}</div>
+  if (!user) {
+    return <div>No user found</div>
+  }
+
+  return <div>{<h1>Hi {user.user_metadata['full_name']}</h1>}</div>
 }
