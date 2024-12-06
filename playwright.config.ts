@@ -1,7 +1,7 @@
 // playwright.config.ts
 
-import { PlaywrightTestConfig } from '@playwright/test'
 import dotenv from 'dotenv'
+import { PlaywrightTestConfig } from 'playwright/test'
 
 dotenv.config({ path: '.env.local' })
 
@@ -28,3 +28,19 @@ const config: PlaywrightTestConfig = {
 }
 
 export default config
+
+// export default defineConfig({
+//   projects: [
+//     { name: 'setup', testMatch: /.*\.setup\.ts/ },
+//
+//     {
+//       name: 'chromium',
+//       use: {
+//         ...devices['Desktop Chrome'],
+//         // Use prepared auth state.
+//         storageState: 'playwright/.auth/user.json',
+//       },
+//       dependencies: ['setup'],
+//     },
+//   ],
+// })
