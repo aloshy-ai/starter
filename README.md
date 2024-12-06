@@ -107,12 +107,33 @@ supabase login
 supabase link
 ```
 
+#### c. GitHub CLI
+
+```bash
+gh auth login
+```
+
+### 5. Environment Variables
+
+Create a `.env.local` file in the root of the project and add the missing values:
+
+```bash
+cp .env.example .env.local
+```
+
+### 6. Setup Github Oauth Clients
+
+- Go to `https://github.com/settings/developers and create 2 new OAuth Apps in your GitHub account - one for development and one for production.
+- Update the `.env.local` file with the client ID and secret for development environment. 
+- Go to https://supabase.com/dashboard/project/<PROJECT_ID>/auth/providers, and add the GitHub OAuth client ID and secret for production environment.
+
+
 ## Misc. Commands
 
 Pull the environment variables from Vercel:
 
 ```bash
-vercel env pull .env.development --environment development
+vercel env pull
 vercel env pull .env.production --environment production
 ```
 
