@@ -6,7 +6,7 @@ import dotenv from 'dotenv'
 dotenv.config({ path: '.env.local' })
 
 const config: PlaywrightTestConfig = {
-  testDir: './test',
+  testDir: './tests',
   use: {
     baseURL: 'http://localhost:3000',
   },
