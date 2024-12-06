@@ -13,16 +13,27 @@ import { Avatar, AvatarImage } from '@/components/ui/avatar'
 export function SignOutButton({ className }: { className?: string }) {
   const supabase = createBrowserClient()
   const [user, setUser] = useState<User | null>(null)
+  const [error, setError] = useState<Error | null>(null)
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user }, error }) => {
-      if (error) throw error
-      if (!user) throw new Error('No user')
+      if (error) {
+        console.error(error)
+        setError(error)
+        return
+      }
+      if (!user) {
+        const noUserError = new Error('No user')
+        console.error(noUserError)
+        setError(noUserError)
+        return
+      }
       setUser(user)
     })
   }, [supabase])
 
-  if (!user) return <Loading className="fixed inset-0 z-10 flex items-start justify-center" />
+  if (error || !user)
+    return <Loading className="fixed inset-0 z-10 flex items-start justify-center" />
 
   return (
     <FadeInOut className={cn('', className)}>
