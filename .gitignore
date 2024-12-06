@@ -32,6 +32,7 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 !.envrc
+!.env.example
 
 # vercel
 .vercel
@@ -43,18 +44,9 @@ next-env.d.ts
 # nix
 .direnv
 
-# Ignore all .idea files except for code style settings
-.idea/*
-!.idea/codeStyles
-!.idea/inspectionProfiles
-!.idea/misc.xml
-!.idea/modules.xml
-!.idea/vcs.xml
-
-# Ignore all .vscode files except for settings and extensions
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
+# IDE files
+.idea
+.vscode
 
 # Test results
 /test-results
