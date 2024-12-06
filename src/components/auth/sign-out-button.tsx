@@ -3,11 +3,12 @@
 import React, { useEffect, useState } from 'react'
 import { User } from '@supabase/auth-js'
 import Link from 'next/link'
-import { FadeInOut } from '@/components/layout/fade-in-out'
 import { createBrowserClient } from '@/lib/supabase/client'
+import { Loading } from '@/components/acertinity/loading'
+import { FadeInOut } from '@/components/layout/fade-in-out'
+import { cn } from '@/lib/utils'
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
 import { Avatar, AvatarImage } from '@/components/ui/avatar'
-import { cn } from '@/lib/utils'
 
 export function SignOutButton({ className }: { className?: string }) {
   const supabase = createBrowserClient()
@@ -20,6 +21,8 @@ export function SignOutButton({ className }: { className?: string }) {
       setUser(user)
     })
   }, [supabase])
+
+  if (!user) return <Loading className="fixed inset-0 z-10 flex items-start justify-center" />
 
   return (
     <FadeInOut className={cn('', className)}>
