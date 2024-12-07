@@ -19,3 +19,8 @@ export async function verifyOGImage(page: Page, path: string) {
     ok: response?.ok(),
   }
 }
+
+export async function waitForAuthRedirect(page: Page) {
+  await page.waitForURL('**/user', { timeout: 10000 })
+  await page.waitForLoadState('networkidle')
+}
