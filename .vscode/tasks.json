@@ -1,0 +1,64 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Stop Next.js",
+      "type": "shell",
+      "command": "pkill -9 ^next-server || true",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "new",
+        "close": true
+      },
+      "problemMatcher": [],
+      "isBackground": false
+    },
+    {
+      "label": "Start Docker",
+      "type": "shell",
+      "command": "open -g -a Docker && sleep 1 && until docker info > /dev/null 2>&1; do sleep 2; done",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "new",
+        "close": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Start Supabase",
+      "type": "shell",
+      "command": "supabase start",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "new",
+        "close": true
+      },
+      "problemMatcher": [],
+      "dependsOn": "Start Docker"
+    },
+    {
+      "label": "Wait for Supabase",
+      "type": "shell",
+      "command": "until pg_isready -h localhost -p 54322 -d postgres -U postgres > /dev/null 2>&1; do sleep 1; done",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "new",
+        "close": true
+      },
+      "problemMatcher": [],
+      "dependsOn": "Start Supabase"
+    },
+    {
+      "label": "Wait for Next.js",
+      "type": "shell",
+      "command": "until curl -s http://localhost:3000 > /dev/null; do sleep 1; done",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "new",
+        "close": true
+      },
+      "problemMatcher": [],
+      "dependsOn": "Wait for Supabase"
+    }
+  ]
+}

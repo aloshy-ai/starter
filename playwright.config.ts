@@ -1,9 +1,7 @@
 // playwright.config.ts
-
 import { defineConfig, devices } from '@playwright/test'
 import dotenv from 'dotenv'
-import path from 'path'
-import { AUTH_FILE } from './tests/paths'
+import { AUTH_FILE } from '@tests/paths'
 
 dotenv.config({ path: '.env.local' })
 

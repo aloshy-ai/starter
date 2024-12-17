@@ -1,0 +1,56 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "name": "Start Next.js",
+      "request": "launch",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["dev"],
+      "skipFiles": ["<node_internals>/**"],
+      "sourceMaps": true,
+      "killBehavior": "forceful",
+      "presentation": {
+        "hidden": true
+      },
+      "console": "integratedTerminal",
+      "preLaunchTask": "Stop Next.js"
+    },
+    {
+      "type": "pwa-msedge",
+      "name": "Launch Microsoft Edge in headless mode",
+      "request": "launch",
+      "runtimeArgs": ["--headless", "--remote-debugging-port=9222"],
+      "url": "http://localhost:3000",
+      "presentation": {
+        "hidden": true
+      },
+      "cleanUp": "wholeBrowser",
+      "disableNetworkCache": true,
+      "preLaunchTask": "Wait for Next.js"
+    },
+    {
+      "type": "vscode-edge-devtools.debug",
+      "name": "Open Edge DevTools",
+      "request": "attach",
+      "url": "http://localhost:3000",
+      "presentation": {
+        "hidden": true
+      },
+      "hostname": "localhost",
+      "port": 9222,
+      "preLaunchTask": "Wait for Next.js"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch",
+      "configurations": [
+        "Start Next.js",
+        "Launch Microsoft Edge in headless mode"
+        // "Open Edge DevTools"
+      ],
+      "stopAll": true,
+      "preLaunchTask": "Wait for Supabase"
+    }
+  ]
+}

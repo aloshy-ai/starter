@@ -44,9 +44,8 @@ next-env.d.ts
 # nix
 .direnv
 
-# IDE files
+# IDEA files
 .idea
-.vscode
 
 # Test results
 /test-results

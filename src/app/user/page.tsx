@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { SignOutButton } from '@/components/auth/sign-out-button'
+import { RepositoryList } from '@/components/github/RepositoryList'
 
 /**
  * UserPage component renders a SignOutButton that is styled and positioned
@@ -14,6 +15,9 @@ import { SignOutButton } from '@/components/auth/sign-out-button'
  */
 export default function UserPage(): React.JSX.Element {
   return (
-    <SignOutButton className="fixed inset-0 z-10 flex items-start justify-center p-8 md:justify-end" />
+    <section>
+      <SignOutButton className="fixed inset-0 z-10 flex items-start justify-center p-8 md:justify-end" />
+      <RepositoryList />
+    </section>
   )
 }
