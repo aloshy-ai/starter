@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="docker:start" type="js.build_tools.npm" nameIsGenerated="true">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts>
+      <script value="docker:start" />
+    </scripts>
+    <node-interpreter value="/nix/store/f0lm95g31vpknr8jj9xw53cx2rqly2nm-nodejs-20.18.1/bin/node" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>
