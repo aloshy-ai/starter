@@ -7,6 +7,8 @@
     </scripts>
     <node-interpreter value="/nix/store/f0lm95g31vpknr8jj9xw53cx2rqly2nm-nodejs-20.18.1/bin/node" />
     <envs />
-    <method v="2" />
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="docker:start" run_configuration_type="js.build_tools.npm" />
+    </method>
   </configuration>
 </component>

@@ -44,9 +44,6 @@ next-env.d.ts
 # nix
 .direnv
 
-# IDEA files
-.idea
-
 # Test results
 /test-results
 .env*.local
